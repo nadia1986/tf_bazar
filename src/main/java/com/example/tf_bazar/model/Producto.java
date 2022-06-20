@@ -14,14 +14,14 @@ public class Producto {
     private Long codigo_producto;
     private String nombre;
     private String marca;
-    private String costo;
+    private Double costo;
     private Double cant_disponible;
    // @ManyToOne
    // @JoinColumn(name= "codigo_venta")
     @ManyToMany(mappedBy = "productos")
     private List<Venta> ventas;
 
-    public Producto( Long codigo_producto,String nombre, String marca,String costo,Double cant_disponible, List<Venta> ventas) {
+    public Producto( Long codigo_producto,String nombre, String marca,Double costo,Double cant_disponible, List<Venta> ventas) {
         this.codigo_producto= codigo_producto;
         this.nombre= nombre;
         this.marca= marca;

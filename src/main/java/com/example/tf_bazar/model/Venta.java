@@ -25,6 +25,8 @@ public class Venta {
     private List<Producto> productos;
 
     @OneToOne
+    @JoinColumn(name= "idCliente",
+                referencedColumnName = "id_cliente" )
     private Cliente unCliente;
 
     public Venta(Long cod_venta,LocalDate fecha_venta, Double total,List<Producto> productos,Cliente unCliente) {
