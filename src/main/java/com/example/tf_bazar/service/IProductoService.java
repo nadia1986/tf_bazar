@@ -11,4 +11,5 @@ public interface IProductoService {
     public void deleteProducto(Long codigo_producto);
     public Producto findProducto(Long codigo_producto);
     void editProducto(Long codOriginal, Long nuevo_codigo,String nuevoNombre, String nuevaMarca,Double nuevoCosto, Double  nuevoStock);
+    List<Producto> getStock();
 }

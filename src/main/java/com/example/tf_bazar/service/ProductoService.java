@@ -6,6 +6,7 @@ import com.example.tf_bazar.repository.IProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class ProductoService implements IProductoService {
@@ -51,6 +52,20 @@ public class ProductoService implements IProductoService {
         productoModif.setCant_disponible(nuevoStock);
 
         this.saveProducto(productoModif);
+    }
+
+    @Override
+    public List<Producto> getStock() {
+        List<Producto> listaProductos = this.getProductos();
+        List<Producto> listaFaltaStock = new ArrayList<Producto>();
+
+
+        for (Producto prod :listaProductos) {
+            if (prod.getCant_disponible()  <=5.0) {
+                listaFaltaStock.add(prod);
+            }
+        }
+        return listaFaltaStock;
     }
 
 

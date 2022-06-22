@@ -21,13 +21,16 @@ public class Producto {
     @ManyToMany(mappedBy = "productos")
     private List<Venta> ventas;
 
-    public Producto( Long codigo_producto,String nombre, String marca,Double costo,Double cant_disponible, List<Venta> ventas) {
+    public Producto() {
+    }
+
+    public Producto(Long codigo_producto, String nombre, String marca, Double costo, Double cant_disponible, List<Venta> ventas) {
         this.codigo_producto= codigo_producto;
         this.nombre= nombre;
         this.marca= marca;
         this.costo= costo;
         this.cant_disponible= cant_disponible;
-        this.ventas= ventas;
+
     }
 
 

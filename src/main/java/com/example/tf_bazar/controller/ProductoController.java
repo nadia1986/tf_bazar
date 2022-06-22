@@ -15,7 +15,7 @@ public class ProductoController {
     private IProductoService serviProducto;
 
 
-    @GetMapping("productos")
+    @GetMapping("/productos")
     public List<Producto> listarProductos(){
 
         return serviProducto.getProductos();
@@ -43,5 +43,11 @@ public class ProductoController {
         Producto productoEditado= serviProducto.findProducto(nuevoCodigo);
         return productoEditado ;
 
+    }
+
+    //trae productos con stock menor o igual  a 5
+    @GetMapping("/productos/falta_stock")
+    public List<Producto> traerProductos() {
+        return serviProducto.getStock();
     }
 }
